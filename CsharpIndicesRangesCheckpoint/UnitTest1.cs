@@ -24,7 +24,7 @@ namespace CsharpIndicesRangesCheckpoint
 
         private string getGradeFromEnd(int indexFromEnd)
         {
-            string item = GRADES[GRADES.Length - indexFromEnd];
+            string item = GRADES[^indexFromEnd];
             return item;
         }
 
@@ -38,8 +38,7 @@ namespace CsharpIndicesRangesCheckpoint
 
         private string[] getGradeRange(int startIndex, int endIndex)
         {
-            var length = endIndex - startIndex + 1;
-            var result = GRADES.Skip(startIndex).Take(length).ToArray();
+            var result = GRADES[startIndex..(endIndex+1)];
             return result;
         }
     }
